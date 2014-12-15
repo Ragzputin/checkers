@@ -374,7 +374,7 @@ class CheckerBoard(Frame):
             col_diff = abs(final_coord[0] - self.icoord[0])
 
             same_colour = False
-            if ((self.prev_itm > 65 and self.prev_itm < 77) and (cur_itm > 65 and cur_itm < 77)) \
+            if ((self.prev_itm > 64 and self.prev_itm < 77) and (cur_itm > 64 and cur_itm < 77)) \
                     and self.illegal != True:
                 same_colour = True
                 tkMessageBox.showinfo(title=None, message="Orange's Turn!")
@@ -385,7 +385,7 @@ class CheckerBoard(Frame):
                     self.is_moved = True
 
 
-            elif ((self.prev_itm > 77 and self.prev_itm < 89) and (cur_itm > 77 and cur_itm < 89)) \
+            elif ((self.prev_itm > 76 and self.prev_itm < 90) and (cur_itm > 76 and cur_itm < 90)) \
                     and self.illegal != True:
                 same_colour = True
                 tkMessageBox.showinfo(title=None, message="Gray's Turn!")
@@ -401,18 +401,18 @@ class CheckerBoard(Frame):
                     sq_dims = RectDims(final_coord)
                     self.moves += 1
                     print "Moves: ", self.moves
-                    if final_coord[0] == 1 and cur_itm > 76:
+                    if final_coord[0] == 1 and cur_itm > 76 and same_colour != True:
                         canvas.itemconfig(cur_itm,fill="OrangeRed4",outline="OrangeRed4")
                         self.ocrowns.append(cur_itm)
                         print "self.ocrowns: ", self.ocrowns
-                    elif final_coord[0] == 8 and cur_itm < 77:
-                        canvas.itemconfig(cur_itm,fill="DarkSlateGray2",outline="DarkSlateGray2")
+                    elif final_coord[0] == 8 and cur_itm < 77 and same_colour != True:
+                        canvas.itemconfig(cur_itm,fill="gray25",outline="gray25")
                         self.gcrowns.append(cur_itm)
                         print "self.gcrowns: ", self.gcrowns
 
                     gcrn_itm = 0
                     for i in self.gcrowns:
-                        if i == cur_itm:
+                        if i == cur_itm and same_colour != True:
                             gcrn_itm = i
                             break
 
@@ -421,7 +421,7 @@ class CheckerBoard(Frame):
 
                     ocrn_itm = 0
                     for i in self.ocrowns:
-                        if i == cur_itm:
+                        if i == cur_itm and same_colour != True:
                             ocrn_itm = i
                             break
 
