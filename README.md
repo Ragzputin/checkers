@@ -7,6 +7,7 @@ A Checkers game using Python Tkinter. The pieces on the board are placed vertica
 **Tasks done so far:**
 1. Created the 2-player Checkers GUI with TKinter
 2. Developed all the basic moves that players can make in Checkers
+3. Ironed out a ton of functionality-based syntax and semantic errors.
 
 **Tasks TODO:**
 1. There are a few glitches that were found when making certain moves in the game - these need to be ironed out.
